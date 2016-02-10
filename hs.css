@@ -1,0 +1,237 @@
+
+@font-face {
+  font-family: 'Arimo';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arimo'), url(fonts/Arimo.woff) format('woff');
+}
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lobster'), url(fonts/Lobster.woff) format('woff');
+}
+
+
+body {
+	background: #eee;
+	font-family: 'Arimo', sans-serif;
+	font-size: 12px;
+}
+
+#mesa {
+	position: relative;
+	width: 800px;
+	height: 600px;
+	background: #ddd;
+	border-radius: 5px;
+	margin: 0 auto;
+	padding: 5px;
+}
+
+.campo {
+	width: 99%;
+	height: 48%;
+	border-radius: 3px;
+	padding: 3px;
+	margin: 3px;
+}
+
+.campo:first-child {
+	background: #DAA1A1;
+}
+
+.campo:last-child {
+	background: #A1A3DA;
+}
+
+.status {
+	float: right;
+	background: rgba(255,255,255,.3);
+	height: 6%;
+	width: 79%;
+	margin-bottom: 3px;
+}
+
+
+.out {
+	float: right;
+	background: rgba(255,255,255,.3);
+	height: 93%;
+	width: 79%;
+}
+.out .carta {
+	float: left;
+}
+.campo:first-child .status,
+.campo:first-child .out {
+	width: 100%;
+}
+
+.mano {
+	background: rgba(255,255,255,.3);
+	float: left;
+	height: 100%;
+	width: 20%;
+	position: relative;
+}
+
+/* ---------------- Cartas ---------------- */
+.carta.sm {
+	background: rgb(166, 226, 126);
+	margin: 9px 3px;
+	text-align: center;
+	border: 1px solid #333;
+	border-radius: 3px;
+}
+.carta.sm .coste {
+	float: left;
+	display: inline-block;
+	background: rgb(73, 174, 206);
+	width: 21px;
+	height: 21px;
+	line-height: 21px;
+	border-radius: 100%;
+	margin-top: -3px;
+	margin-left: -5px;
+}
+
+.carta.med {
+	width: 150px;
+	height: 230px;
+	background: rgb(166, 226, 126);
+	border: 1px solid #333;
+	border-radius: 5px;
+	margin: 5px;
+	position: relative;
+}
+.carta.med label {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+.carta.med .nombre {
+	position: absolute;
+	top: 17px;
+	left: -2px;
+	background: rgb(158, 115, 38);
+	padding: 2px;
+	font-family: 'Lobster';
+	color: #fff;
+	text-shadow: 1px 1px 1px #000;
+	font-weight: 100;
+	z-index: 2;
+}
+.carta.med .desc {
+	position: absolute;
+	background: rgb(226, 250, 176);
+	left: 3px;
+	top: 39px;
+	height: 160px;
+	width: 140px;
+	box-shadow: 0 0 3px rgb(226, 250, 176);
+	padding: 2px;
+	font-size: 9px;
+}
+.carta.med .att,
+.carta.med .def,
+.carta.med .coste {
+	border-radius: 100%;
+	padding: 2px;
+	line-height: 20px;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	
+}
+.carta.med .att {
+	background: rgb(235, 220, 49);
+	left: -4px;
+	bottom: -4px;
+}
+.carta.med .def {
+	background: rgb(235, 94, 49);
+	right: -4px;
+	bottom: -4px;
+}
+.carta.med .coste {
+	background: rgb(73, 174, 206);
+	left: -4px;
+	top: -4px;
+}
+.carta.med .raza {
+	position: absolute;
+	bottom: 0;
+	font-size: 9px;
+}
+
+.out .carta.med {
+	width: 88px;
+	height: 150px;
+	border-radius: 65px;
+}
+.out .carta.med .desc {
+	display: none;
+}
+.out .carta.med .att {
+	left: -2px;
+	bottom: 0px;
+}
+.out .carta.med .def {
+	right: -2px;
+	bottom: 0px;
+}
+.out .carta.med .raza {
+	bottom: 7px;
+}
+.carta._sel_ {
+	box-shadow: 0 0 1em #DCE24A;
+	border-color: #DCE24A;
+}
+
+.modal {
+	position: absolute;
+	width: 650px;
+	height: 300px;
+	background: #333;
+	border-radius: 5px;
+	top: 25%;
+	left: 9.5%;
+}
+.modal .carta {
+	float: left;
+}
+
+/* ---------------- botones ---------------- */
+.boton {
+	background: rgb(69, 168, 69);
+	width: 90px;
+	text-align: center;
+	padding: 5px;
+	height: 17px;
+	position: absolute;
+	margin-left: 254px;
+	margin-top: 265px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.boton.dis {
+	background: #666;
+	cursor: default;
+}
+.boton:hover {
+	background: rgb(81, 216, 81);
+}
+.boton.dis:hover {
+	background: #666;
+}
+#jugarCarta {
+	margin: 0;
+	bottom: 5px;
+	left: 30px;
+}
+#pasarTurno  {
+	margin: 0;
+	right: 0;
+	top: 292px;
+}
